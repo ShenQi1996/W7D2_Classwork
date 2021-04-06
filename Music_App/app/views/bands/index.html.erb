@@ -1,0 +1,11 @@
+<h1>All Bands</h1>
+
+    <%= auth_token %>
+<ul>
+
+    <% @bands.each do |band| %>
+        <li> <%= band.name %>
+        <a href="<%= band_url(band)%>">Show Page</a>
+        </li>
+    <% end %>
+</ul>

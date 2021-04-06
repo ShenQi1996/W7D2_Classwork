@@ -35,8 +35,8 @@ class BandsController < ApplicationController
         if @band.update(band_params)
             redirect_to band_url(@band)
         else
-            flash.now[:errors] = @band.errors.full_messages
-            redirect_to band_url(@band)
+            flash.now[:errors] = ['Stupid mistake!']
+            render :edit
         end
 
     end

@@ -1,0 +1,12 @@
+<h1>Band Page</h1>
+
+<form action="<%= band_url(@band) %>" method="get">
+    
+    <%= auth_token %>
+    
+    <label> Band Name:
+        <%= @band.name %>
+    </label>
+
+    <a href="<%= edit_band_url(@band) %>">Edit info</a>
+    
