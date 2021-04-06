@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
             login!(user)
             redirect_to user_url(user)
         else
+            flash.now[:errors] = ["Invalid credentails"]
             render :new
         end
     end
@@ -17,6 +18,7 @@ class SessionsController < ApplicationController
 
     def destroy
         logout!
+        flash[:success] = ["Successfully logged out."]
         redirect_to new_session_url
     end
 

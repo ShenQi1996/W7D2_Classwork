@@ -10,7 +10,9 @@
   </head>
 
   <body>
-
+  <header>
+      <h1>MusicApp</h1>
+  </header>
     <% if logged_in? %>
         <h2>Welcome</h2>
 
@@ -20,9 +22,25 @@
           <input type="submit" value="Log Out">        
         </form>
       <% else %>
-          <a href="<%= new_session_url %>">Log In</a>
-          <a href="<%= new_user_url %>">Sign Up</a>
+          <a class="url_tag" href="<%= new_session_url %>">Log In</a>
+          <a class="url_tag" href="<%= new_user_url %>">Sign Up</a>
       <% end %>
+
+    <%if flash[:errors]%>
+      <ul>
+        <%flash[:errors].each do |error|%>
+          <li><%=error %></li>
+        <%end%>
+      </ul>
+    <%end%>
+
+     <%if flash[:success]%>
+      <ul>
+        <%flash[:success].each do |msg|%>
+          <li><%=msg %></li>
+        <%end%>
+      </ul>
+    <%end%>
 
     <%= yield %>
   </body>
