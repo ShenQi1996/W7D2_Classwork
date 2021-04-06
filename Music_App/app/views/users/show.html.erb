@@ -1,0 +1,11 @@
+<h1>Show Page</h1>
+
+<form action="<%= user_url(@user) %>" method="get">
+    
+    <%= auth_token %>
+    
+    <label>Email:
+        <%= @user.email %>
+    </label>
+    
+</form>

@@ -1,6 +1,9 @@
 <h1>User sign up page</h1>
 
 <form action="<%=users_url%>" method="post">
+
+    <%= auth_token %>
+
     <label>Username: 
         <input type="text" name="user[email]" value="">
     </label>
